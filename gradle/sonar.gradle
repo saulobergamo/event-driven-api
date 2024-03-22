@@ -1,0 +1,9 @@
+sonarqube {
+    properties {
+        property "sonar.projectKey", "sistemas-distribuidos:${project.name}"
+        property 'sonar.coverage.exclusions',
+                "**/config/*, **/client/ ,**/listener/*, **/model/**, **/repository/*, " +
+                        "**/Application*"
+    }
+}
+project.tasks["sonarqube"].dependsOn jacocoTestReport

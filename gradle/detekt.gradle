@@ -1,0 +1,13 @@
+apply plugin: "io.gitlab.arturbosch.detekt"
+
+detekt {
+    toolVersion = detektVersion
+    source.from(file("src/main/kotlin"))
+    config.setFrom(file("detekt-config.yml"))
+    reports {
+        xml {
+            required = true
+            outputLocation.set(file("$buildDir/reports/detekt/detekt.xml"))
+        }
+    }
+}

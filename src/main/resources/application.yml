@@ -1,0 +1,12 @@
+server:
+  port: 9084
+  servlet:
+    contextPath: /sistemas-distribuidos-waiter
+
+spring:
+  data:
+    mongodb:
+      uri: mongodb://admin:admin@localhost:27017/waiter?authSource=admin
+
+  application:
+    name: sistemas-distribuidos-waiter
