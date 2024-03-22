@@ -14,18 +14,18 @@ import org.springframework.web.bind.annotation.RestController
 @RestController
 @Tag(name = "WaiterController")
 @RequestMapping("/waiter")
-class WaiterController (
+class WaiterController(
     private val waiterService: WaiterService
-){
+) {
     private val logger = KotlinLogging.logger {}
 
     @GetMapping
-    fun getAvailableMenu() : List<Popsicole>? {
+    fun getAvailableMenu(): List<Popsicole>? {
         return waiterService.getAvailablePopsicoles()
     }
 
     @GetMapping("/all")
-    fun getAllPopsicoles() : List<Popsicole>? {
+    fun getAllPopsicoles(): List<Popsicole>? {
         return waiterService.showAllPopsicoles()
     }
     @Deprecated("Banco de dados deve ser manipulado apenas pelos microsserviços de estoque e compras")
@@ -36,6 +36,4 @@ class WaiterController (
             "placeOrder: request sent successfully"
         }
     }
-
-    @
 }

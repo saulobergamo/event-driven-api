@@ -5,5 +5,5 @@ import org.springframework.data.mongodb.repository.MongoRepository
 
 interface PopsicolesRepository : MongoRepository<Popsicole, String> {
 
-    fun findByAvailable(available: Boolean) : List<Popsicole>?
+    fun findByAvailable(available: Boolean): List<Popsicole>?
 }

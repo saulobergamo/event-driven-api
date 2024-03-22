@@ -20,7 +20,7 @@ class WaiterService(
         }
     }
 
-    fun showAllPopsicoles() : List<Popsicole>? {
+    fun showAllPopsicoles(): List<Popsicole>? {
         return popsicolesRepository.findAll().also {
             logger.info {
                 "showAllPopsicoles: trying to get all popsicoles in menu"
@@ -42,9 +42,8 @@ class WaiterService(
             count++
             popsicolesRepository.save(newPopsicole)
         }
-        logger.info{
+        logger.info {
             "savePopsicoleList: saved $count popsicoles in dataBase"
         }
     }
-
 }
