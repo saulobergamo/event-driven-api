@@ -65,5 +65,3 @@ Passo a passo de execução para que o microsserviço fique em execução e disp
 - Executar inspeção com Detekt:
 
   Comando: ```./gradlew detekt```
-
-
