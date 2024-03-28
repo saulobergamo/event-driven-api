@@ -1,12 +1,22 @@
 server:
-  port: 9084
+  port: 9081
   servlet:
-    contextPath: /sistemas-distribuidos-waiter
+    contextPath: /event-driven-api-pub1
 
 spring:
   data:
     mongodb:
-      uri: mongodb://admin:admin@localhost:27017/waiter?authSource=admin
+      uri: mongodb://admin:admin@localhost:27017/event-driven-api?authSource=admin
+  rabbitmq:
+#    host: localhost
+#    port: 5672
+#    username: guest
+#    password: guest
+    name:
+      queue1: event-driven-api-queue1
+      queue2: event-driven-api-queue2
+      queue3: event-driven-api-queue3
+      exchange: event-driven-api-fanout
 
   application:
-    name: sistemas-distribuidos-waiter
+    name: event-driven-api-pub1

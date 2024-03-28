@@ -1,18 +1,17 @@
-package com.example.waiter.model.entity
+package com.example.pub1.model.entity
 
 import org.springframework.data.annotation.Id
 import org.springframework.data.mongodb.core.index.Indexed
 import org.springframework.data.mongodb.core.mapping.Document
 
 @Document
-class Popsicole(
+class Product(
     @Id
     var id: String? = null,
 
     @Indexed
-    var available: Boolean,
-    var flavor: String? = null,
-    var weight: Double? = null,
+    var available: Boolean? = false,
     var description: String? = null,
+    var price: Double? = 0.0,
     var amount: Int? = 0
 )

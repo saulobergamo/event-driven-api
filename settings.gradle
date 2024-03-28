@@ -1,8 +1,1 @@
-pluginManagement {
-    repositories {
-        mavenCentral()
-        gradlePluginPortal()
-    }
-}
-
-rootProject.name = 'waiter'
+rootProject.name = 'event-drive-api-pub1'
