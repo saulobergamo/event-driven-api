@@ -1,0 +1,72 @@
+[
+  {
+    "id": "6604e7e1b95b4a66c517681e",
+    "available": true,
+    "description": "Product1",
+    "price": 100,
+    "amount": 10
+  },
+  {
+    "id": "6604e7e1b95b4a66c517681f",
+    "available": true,
+    "description": "Product2",
+    "price": 200,
+    "amount": 20
+  },
+  {
+    "id": "6604e7e1b95b4a66c5176820",
+    "available": true,
+    "description": "Product3",
+    "price": 300,
+    "amount": 30
+  },
+  {
+    "id": "6604e84ab95b4a66c5176821",
+    "available": true,
+    "description": "Product4",
+    "price": 400,
+    "amount": 40
+  },
+  {
+    "id": "6604e84ab95b4a66c5176822",
+    "available": true,
+    "description": "Product5",
+    "price": 500,
+    "amount": 50
+  },
+  {
+    "id": "6604e84ab95b4a66c5176823",
+    "available": true,
+    "description": "Product6",
+    "price": 600,
+    "amount": 60
+  },
+  {
+    "id": "6604e8b1b95b4a66c5176824",
+    "available": true,
+    "description": "Product7",
+    "price": 700,
+    "amount": 70
+  },
+  {
+    "id": "6604e8b1b95b4a66c5176825",
+    "available": true,
+    "description": "Product8",
+    "price": 800,
+    "amount": 80
+  },
+  {
+    "id": "6604e8b1b95b4a66c5176826",
+    "available": true,
+    "description": "Product9",
+    "price": 900,
+    "amount": 90
+  },
+  {
+    "id": "6604e8b1b95b4a66c5176826",
+    "available": true,
+    "description": "Product10",
+    "price": 1000,
+    "amount": 100
+  }
+]

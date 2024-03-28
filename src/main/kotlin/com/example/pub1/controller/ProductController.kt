@@ -15,9 +15,9 @@ import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-@Tag(name = "WaiterController")
+@Tag(name = "ProductController")
 @RequestMapping("/event-driven-api-pub1")
-class WaiterController(
+class ProductController(
     private val productService: ProductService,
     private val rabbitmqProducer: RabbitmqProducer
 ) {
