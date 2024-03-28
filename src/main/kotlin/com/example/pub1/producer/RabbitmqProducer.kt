@@ -28,7 +28,7 @@ class RabbitmqProducer(
         }
         rabbitTemplate.convertAndSend(exchange, "", message).also {
             logger.info {
-                "sendPlacedOrders: order placed - ${product.description}"
+                "sendPlacedOrders: order placed to exchange=$exchange- ${product.description}"
             }
         }
     }

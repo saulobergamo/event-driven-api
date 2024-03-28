@@ -6,7 +6,7 @@
 ![img.png](img.png)
 
 
-Microsserviço event-driven-api-pubs responsável por publicar mensagens em uma exchange fanout RabbitMQ.
+Microsserviço event-driven-api-pub1 responsável por publicar mensagens em uma exchange fanout RabbitMQ.
 
 ## Documentação
 
