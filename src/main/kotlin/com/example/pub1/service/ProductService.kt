@@ -30,19 +30,11 @@ class ProductService(
         }
     }
 
-    fun saveProductsList(productRequest: List<ProductRequest>) {
+    fun sendOrder(requestList: List<ProductRequest>) {
         var count = 0
-        productRequest.forEach { product ->
-            val newProduct = Product(
-                null,
-                product.available,
-                product.description,
-                product.price,
-                product.amount
-            )
+        requestList.forEach { product ->
             count++
-            productRepository.save(newProduct)
-            rabbitmqProducer.sendPlacedOrders(newProduct)
+            rabbitmqProducer.sendPlacedOrders(product)
         }.also {
             logger.info {
                 "saveProductsList: saved $count products in dataBase"

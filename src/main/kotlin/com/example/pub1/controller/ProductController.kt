@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
@@ -33,8 +32,8 @@ class ProductController(
         return productService.showAllProducts()
     }
     @PostMapping()
-    fun placeOrder(@RequestBody productRequest: List<ProductRequest>): ResponseEntity<String> {
-        productService.saveProductsList(productRequest).also {
+    fun placeOrder(@RequestBody requestList: List<ProductRequest>): ResponseEntity<String> {
+        productService.sendOrder(requestList).also {
             logger.info {
                 "placeOrder: request sent successfully"
             }
@@ -43,8 +42,8 @@ class ProductController(
     }
 
     @PostMapping("/send")
-    fun sendMessage(@RequestParam("message") message: Product): ResponseEntity<String> {
-        rabbitmqProducer.sendPlacedOrders(message)
-        return ResponseEntity.ok("sendMessage: message sent successfully, message=$message")
+    fun sendMessage(@RequestBody productRequest: ProductRequest): ResponseEntity<String> {
+        rabbitmqProducer.sendPlacedOrders(productRequest)
+        return ResponseEntity.ok("sendMessage: message sent successfully, message=$productRequest")
     }
 }

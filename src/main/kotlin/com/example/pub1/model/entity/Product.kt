@@ -10,6 +10,7 @@ class Product(
     var id: String? = null,
 
     @Indexed
+    val productId: String? = null,
     var available: Boolean? = false,
     var description: String? = null,
     var price: Double? = 0.0,
