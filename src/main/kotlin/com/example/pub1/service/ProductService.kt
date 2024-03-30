@@ -30,11 +30,11 @@ class ProductService(
         }
     }
 
-    fun sendOrder(requestList: List<ProductRequest>) {
+    fun sendRequestList(requestList: List<ProductRequest>) {
         var count = 0
         requestList.forEach { product ->
             count++
-            rabbitmqProducer.sendPlacedOrders(product)
+            rabbitmqProducer.sendProductRequest(product)
         }.also {
             logger.info {
                 "saveProductsList: saved $count products in dataBase"

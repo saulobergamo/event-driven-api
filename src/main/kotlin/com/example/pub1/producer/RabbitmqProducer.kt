@@ -20,7 +20,7 @@ class RabbitmqProducer(
 //    @Value("\${spring.rabbitmq.queue.routing.key}")
 //    private lateinit var routingKey : String
 
-    fun sendPlacedOrders(productRequest: ProductRequest) {
+    fun sendProductRequest(productRequest: ProductRequest) {
 
         val message = objectMapper.writeValueAsString(productRequest)
         logger.info {
@@ -28,7 +28,8 @@ class RabbitmqProducer(
         }
         rabbitTemplate.convertAndSend(exchange, "", message).also {
             logger.info {
-                "sendPlacedOrders: order placed to exchange=$exchange- ${productRequest.description}"
+                "sendPlacedOrders: order placed to exchange=$exchange " +
+                        "- productDescription=${productRequest.description}"
             }
         }
     }

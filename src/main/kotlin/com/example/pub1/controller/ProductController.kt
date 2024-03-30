@@ -31,19 +31,19 @@ class ProductController(
     fun getAllProducts(): List<Product>? {
         return productService.showAllProducts()
     }
-    @PostMapping()
-    fun placeOrder(@RequestBody requestList: List<ProductRequest>): ResponseEntity<String> {
-        productService.sendOrder(requestList).also {
+    @PostMapping("/requestList")
+    fun sendRequestList(@RequestBody requestList: List<ProductRequest>): ResponseEntity<String> {
+        productService.sendRequestList(requestList).also {
             logger.info {
-                "placeOrder: request sent successfully"
+                "placeOrder: requestList sent successfully"
             }
         }
         return ResponseEntity.ok("placeOrder: order placed correctly")
     }
 
-    @PostMapping("/send")
-    fun sendMessage(@RequestBody productRequest: ProductRequest): ResponseEntity<String> {
-        rabbitmqProducer.sendPlacedOrders(productRequest)
+    @PostMapping("/productRequest")
+    fun sendProductRequest(@RequestBody productRequest: ProductRequest): ResponseEntity<String> {
+        rabbitmqProducer.sendProductRequest(productRequest)
         return ResponseEntity.ok("sendMessage: message sent successfully, message=$productRequest")
     }
 }
