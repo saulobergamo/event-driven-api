@@ -38,7 +38,7 @@ class ProductController(
                 "sendRequestList: requestList sent successfully"
             }
         }
-        return ResponseEntity.ok("placeOrder: order placed correctly")
+        return ResponseEntity.ok("sendRequestList: requestList sent successfully")
     }
 
     @PostMapping("/productRequest")
