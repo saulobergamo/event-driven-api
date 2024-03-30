@@ -37,7 +37,7 @@ class ProductService(
             rabbitmqProducer.sendProductRequest(product)
         }.also {
             logger.info {
-                "saveProductsList: saved $count products in dataBase"
+                "sendRequestList: saved $count products in dataBase"
             }
         }
     }

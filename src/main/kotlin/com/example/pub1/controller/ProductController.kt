@@ -35,7 +35,7 @@ class ProductController(
     fun sendRequestList(@RequestBody requestList: List<ProductRequest>): ResponseEntity<String> {
         productService.sendRequestList(requestList).also {
             logger.info {
-                "placeOrder: requestList sent successfully"
+                "sendRequestList: requestList sent successfully"
             }
         }
         return ResponseEntity.ok("placeOrder: order placed correctly")
@@ -44,6 +44,6 @@ class ProductController(
     @PostMapping("/productRequest")
     fun sendProductRequest(@RequestBody productRequest: ProductRequest): ResponseEntity<String> {
         rabbitmqProducer.sendProductRequest(productRequest)
-        return ResponseEntity.ok("sendMessage: message sent successfully, message=$productRequest")
+        return ResponseEntity.ok("sendProductRequest: message sent successfully, message=$productRequest")
     }
 }

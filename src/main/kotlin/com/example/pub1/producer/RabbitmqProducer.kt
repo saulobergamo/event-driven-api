@@ -24,11 +24,11 @@ class RabbitmqProducer(
 
         val message = objectMapper.writeValueAsString(productRequest)
         logger.info {
-            "sendPlacedOrders: trying to send order=$message"
+            "sendProductRequest: trying to send order=$message"
         }
         rabbitTemplate.convertAndSend(exchange, "", message).also {
             logger.info {
-                "sendPlacedOrders: order placed to exchange=$exchange " +
+                "sendProductRequest: order placed to exchange=$exchange " +
                     "- productDescription=${productRequest.description}"
             }
         }
